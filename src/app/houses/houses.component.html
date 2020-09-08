@@ -1,0 +1,19 @@
+<ul class="houses">
+    <li *ngFor="let house of houses"
+        [class.selected]="house === selectedHouse"
+        (click)="onSelect(house)">
+        <span class="badge">{{ house.name }}</span> Head: {{ house.head }}
+    </li>
+</ul>
+
+<div *ngIf="selectedHouse">
+
+    <h2>Edit {{ selectedHouse.name }}</h2>
+    <div><span>House: </span>{{selectedHouse.name}}</div>
+    <div>
+        <label>Head:
+            <input [(ngModel)]="selectedHouse.head" placeholder="head"/>
+        </label>
+    </div>
+  
+</div>
