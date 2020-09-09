@@ -1,0 +1,29 @@
+<div class="box">
+    <p class="subtitle is-5">House Editor</p>
+    <div 
+        *ngIf="selectedHouse"
+        class="message"
+        [ngClass]="{
+            'is-success' : selectedHouse?.name === 'Slytherin',
+            'is-warning' : selectedHouse?.name === 'Hufflepuff',
+            'is-danger' : selectedHouse?.name === 'Gryffindor',
+            'is-info' : selectedHouse?.name === 'Ravenclaw'
+            }"
+    >
+        <div class="message-header">Edit {{ selectedHouse.name }}</div>
+        <div class="message-body">
+            <p><span>House: </span>{{selectedHouse.name}}</p>
+            <p>
+                <label>Head:
+                    <input
+                        [(ngModel)]="selectedHouse.head"
+                        placeholder="head"
+                        />
+                </label>
+            </p>
+        </div>
+    </div>
+    <div *ngIf="!selectedHouse">
+        <p class="has-text-centered">Please select a house to begin editing</p>
+    </div>
+</div>

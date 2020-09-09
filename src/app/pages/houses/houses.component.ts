@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { House } from '../house';
-import { HouseService } from '../house.service';
+import { House } from '../../model/house';
+import { HouseService } from '../../services/house/house.service';
 
 @Component({
   selector: 'app-houses',
@@ -18,12 +18,12 @@ export class HousesComponent implements OnInit {
     this.getHouses();
   }
 
-  getHouses = (): void => {
+  getHouses(): void {
     this.houses = this.houseService.getHouses();
   }
 
-  onSelect(house: House): void {
-    this.selectedHouse = house;
+  onSelect($event: House): void {
+    this.selectedHouse = $event;
   }
 
 }
