@@ -7,6 +7,9 @@ import { HousesComponent } from './pages/houses/houses.component';
 import { HouseEditorComponent } from './components/house-editor/house-editor.component';
 import { HouseListComponent } from './components/house-list/house-list.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './pages/home/home.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { BannerComponent } from './components/banner/banner.component';
     HousesComponent,
     HouseEditorComponent,
     HouseListComponent,
-    BannerComponent
+    BannerComponent,
+    HomeComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
